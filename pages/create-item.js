@@ -109,6 +109,7 @@ export default function CreateItem() {
                 src={fileUrl}
                 alt="Selected image"
                 width={350}
+                height={350}
               />
             </div>
           )

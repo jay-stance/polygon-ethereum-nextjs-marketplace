@@ -57,6 +57,8 @@ export default function MyAssets() {
                 <Image
                   src={nft.image}
                   alt="NFT image"
+                  width={350}
+                  height={350}
                 />
                 <div className="p-4 bg-black">
                   <p className="text-2xl font-bold text-white">Price - {nft.price} Eth</p>

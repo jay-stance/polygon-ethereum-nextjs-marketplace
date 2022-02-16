@@ -73,6 +73,8 @@ export default function Home() {
                   <Image
                     src={nft.image}
                     alt="NFT image"
+                    width={350}
+                    height={350}
                   />
                   <p style={{ height: '64px' }} className="text-2xl font-semibold">{nft.name}</p>
                   <div style={{ height: '70px', overflow: 'hidden' }}>
