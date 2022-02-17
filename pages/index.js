@@ -25,8 +25,13 @@ export default function Home() {
     loadNFTs()
   }, [])
   async function loadNFTs() {    
+    const web3Modal = new Web3Modal()
+    const connection = await web3Modal.connect()
+    const provider = new ethers.providers.Web3Provider(connection)    
+    // const signer = provider.getSigner()
+
     // const provider = new ethers.providers.JsonRpcProvider(rpcEndpoint)
-    const provider = new ethers.providers.JsonRpcProvider("https://speedy-nodes-nyc.moralis.io/618d042b9cab183c870e19bf/eth/ropsten")
+    // const provider = new ethers.providers.JsonRpcProvider("https://speedy-nodes-nyc.moralis.io/618d042b9cab183c870e19bf/eth/ropsten")
     const tokenContract = new ethers.Contract(nftaddress, NFT.abi, provider)
     const marketContract = new ethers.Contract(nftmarketaddress, Market.abi, provider)
     const data = await marketContract.fetchMarketItems()
